@@ -6,7 +6,6 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-/*********** UTILITIES **************/
 int _putchar(char c);
 int _printf(const char *format, ...);
 
