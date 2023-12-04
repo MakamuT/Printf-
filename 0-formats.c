@@ -19,18 +19,19 @@ int _printf(const char *format, ...)
 				case 'c':
 					{
 						char c = (char) va_arg(arg, int);
+
 						_putchar(c);
-					}break;
+					} break;
 				case 's':
 					{
 						char *str = va_arg(arg, char *);
-						
+
 						while (*str != '\0')
 						{
 							_putchar(*str);
 							str++;
 						}
-					}break;
+					} break;
 				case  '%':
 					_putchar('%');
 					break;
