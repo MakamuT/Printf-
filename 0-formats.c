@@ -12,36 +12,36 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	while (*format != '\0')
 	{
-		if (*format == '%')
+		if (*format != '%')
+		{
+			_putchar(format[a]);
+			a++;
+		}
+		else
 		{
 			switch (format[a])
 			{
 				case 'c':
 					{
-						char c = (char) va_arg(arg, int);
-						_putchar(c);
-					}break;
+						_putchar((char)va_arg(arg, int));
+					} break;
 				case 's':
 					{
 						char *str = va_arg(arg, char *);
-						
+
 						while (*str != '\0')
 						{
 							_putchar(*str);
 							str++;
 						}
-					}break;
+					} break;
 				case  '%':
 					_putchar('%');
 					break;
 				default:
-					a++;
+					_putchar('%');
+					break;
 			}
-		}
-		else
-		{
-			_putchar(*format);
-			a++;
 		}
 	}
 	va_end(arg);
