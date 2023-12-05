@@ -6,7 +6,7 @@
  */
 int print_rev(va_list arg)
 {
-	char *str = av_arg(arg, char*);
+	char *str = va_arg(arg, char*);
 	int i = 0, j;
 
 	if (str == NULL)
