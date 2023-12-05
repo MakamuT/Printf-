@@ -22,15 +22,8 @@ int _printf(const char *format, ...)
 			switch (format[a])
 			{
 				case 'c':
-					{
-<<<<<<< HEAD
-						_putchar((char)va_arg(arg, int));
-=======
-						char c = (char) va_arg(arg, int);
-
-						_putchar(c);
->>>>>>> b8c6ae676c3c9c8571b745c14b800a11f3a4150f
-					} break;
+					_putchar((char)va_arg(arg, int));
+					break;
 				case 's':
 					{
 						char *str = va_arg(arg, char *);
