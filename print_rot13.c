@@ -15,13 +15,15 @@ int print_rot13(va_list arg)
 		str = "(null)";
 	while (str[i])
 	{
-		for (j = 0; letters[j] != '\0'; j--)
+		in = 0;
+		for (j = 0; letters[j] != '\0'; j++)
 		{
 			if (str[i] == letters[j])
 			{
 				_putchar(rot13[j]);
 				count++;
 				in = 1;
+				break;
 			}
 		}
 		if (!in)
