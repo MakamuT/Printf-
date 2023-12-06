@@ -14,8 +14,15 @@ int print_int(va_list arg)
 	{
 		len += _putchar(45);
 		num = i * -1;
+	} else
+	{
+		num = i;
 	}
-	num = i;
+	for (num == 0)
+	{
+		len += _putchar(45);
+		return (1);
+	}
 	for (; num / div > 9;)
 		div *= 10;
 	for (; div != 0;)
