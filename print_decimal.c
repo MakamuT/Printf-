@@ -15,11 +15,11 @@ int print_decimal(va_list arg)
 		len += _putchar(45);
 		num = i * -1;
 	}
-	else
+	if (i > 0)
 	{
 		num = i;
 	}
-	if (num == 0)
+	if (i == 0)
 	{
 		len += _putchar(48);
 		return (1);
