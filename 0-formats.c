@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 	int a = 0;
 	va_list arg;
 
-	print_t t[] = {
+	print_f f[] = {
 		{"u", print_unsigned},
 		{"o", print_oct},
 		{"x", print_hex},
@@ -21,13 +21,16 @@ int _printf(const char *format, ...)
 		{"%", print_percent},
 		{"d", print_decimal},
 		{"i", print_int},
+		{"b", print_binary}
+		{"S", print_S},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 
 	if (!format)
 		return (-1);
 	va_start(arg, format);
-	a = parser(format, t, arg);
+	a = parser(format, f, arg);
 	va_end(arg);
 	return (a);
 }

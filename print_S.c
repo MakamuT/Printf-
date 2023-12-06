@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_ADDRESS - prints an hexadecimal number
  * @arg: argument
@@ -54,7 +55,7 @@ int print_S(va_list arg)
 			if (num < 16)
 			{
 				_putchar(48);
-				size++;
+				a++;
 			}
 			a += print_ADDRESS(num);
 		} else

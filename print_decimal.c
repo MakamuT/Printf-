@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_decimal - prints decimals
  * @arg: argument
