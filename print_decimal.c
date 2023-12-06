@@ -17,6 +17,11 @@ int print_decimal(va_list arg)
 	}
 	else
 		num = i;
+	if (num == 0)
+	{
+		len += _putchar(45);
+		return (1);
+	}
 	for (; num / div > 9;)
 		div *= 10;
 	for (; div != 0;)
