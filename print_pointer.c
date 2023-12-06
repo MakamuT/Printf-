@@ -7,29 +7,31 @@
  */
 int print_address(unsigned long int arg)
 {
-	long int i, *arr, count = 0;
+	int i, rem, count = 0;
+	char hex;
 	unsigned long int temp = arg;
 
-	while (arg / 16 != 0)
+	while (temp != 0)
 	{
-		arg /= 16;
+		temp /= 16;
 		count++;
 	}
-	count++;
-	arr = malloc(count * sizeof(int));
+	if (arg == 0)
+	{
+		_putchar(48);
+		count++;
+	}
+	_putchar(48);
+	_putchar('x');
 
-	for (i = 0; i < count; i++)
+	for (i = 0; arg != 0; i++)
 	{
-		arr[i] = temp % 16;
-		temp /= 16;
+		rem = arg % 16;
+		hex = (rem < 10) ? (char)(rem + 48) : (char)(rem - 10 + 97);
+		_putchar(hex);
+		arg /= 16;
 	}
-	for (i = count - 1; i >= 0; i--)
-	{
-		if (arr[i] > 9)
-			arr[i] += 39;
-	}
-	free(arr);
-	return (count);
+	return (count + 2);
 }
 
 /**
@@ -40,20 +42,22 @@ int print_address(unsigned long int arg)
 int print_pointer(va_list arg)
 {
 	void *ptr;
-	char *str = "(nil)";
 	long int count;
 	int i, byte;
 
 	ptr = va_arg(arg, void*);
 	while (ptr == NULL)
 	{
+		char *str = "(nil)";
+
 		for (i = 0; str[i] != '\0'; i++)
 			_putchar(str[i]);
 		return (i);
+	} else
+	{
+		byte = _printf("Address:[%p]", ptr);
 	}
 	count = (unsigned long int)ptr;
-	_putchar(48);
-	_putchar('x');
 	byte = print_address(count);
-	return (byte + 2);
+	return (byte);
 }
