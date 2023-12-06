@@ -10,7 +10,6 @@ int parser(const char *option, print_f f[], va_list arg)
 {
 	int i, j, count, a = 0;
 
-
 	for (i = 0; option[i] != '\0'; i++)
 	{
 		if (option[i] == '%')

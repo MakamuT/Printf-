@@ -26,11 +26,11 @@ int _printf(const char *format, ...)
 		{"R", print_rot13},
 		{"+d", fdec_plus},
 		{"+i", fint_plus},
-		{" d", fdec_space},
+		/*{" d", fdec_space},
 		{" i", fint_space},
 		{"#o", foct_hash},
 		{"#x", fhex_hash},
-		{"#X", fHEX_hash},
+		{"#X", fHEX_hash},*/
 		{" ", f_space},
 		{NULL, NULL}
 	};
