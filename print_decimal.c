@@ -19,7 +19,7 @@ int print_decimal(va_list arg)
 		num = i;
 	if (num == 0)
 	{
-		len += _putchar(45);
+		len += _putchar(48);
 		return (1);
 	}
 	for (; num / div > 9;)
