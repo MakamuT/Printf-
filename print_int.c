@@ -10,13 +10,6 @@ int print_int(va_list arg)
 	int num;
 
 	i = va_arg(arg, int);
-	if (i == INT_MIN)
-	{
-		len += _putchar(45);
-		num = i % 10 * -1;
-		i /= 10;
-		len++;
-	}
 	if (i < 0)
 	{
 		len += _putchar(45);
