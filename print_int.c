@@ -16,20 +16,18 @@ int print_int(va_list arg)
 		num = i % 10 * -1;
 		i /= 10;
 		len++;
-	} else
+	}
+	if (i < 0)
 	{
-		if (i < 0)
-		{
-			len += _putchar(45);
-			num = i * -1;
-		}
-		else if (i > 0)
-			num = i;
-		else
-		{
-			len += _putchar(48);
-			return (1);
-		}
+		len += _putchar(45);
+		num = i * -1;
+	}
+	if (i > 0)
+		num = i;
+	if (num == 0)
+	{
+		len += _putchar(48);
+		return (1);
 	}
 	for (; num / div > 9;)
 		div *= 10;
