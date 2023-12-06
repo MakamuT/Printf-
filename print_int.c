@@ -13,7 +13,7 @@ int print_int(va_list arg)
 	if (i < 0)
 	{
 		len += _putchar(45);
-		num *= -1;
+		num = i * -1;
 	}
 	if (i == 0)
 	{
