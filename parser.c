@@ -8,11 +8,8 @@
  */
 int parser(const char *option, print_f f[], va_list arg)
 {
-	char c = 'B';
-	char *str = "This is my custom printf";
 	int i, j, count, a = 0;
 
-	_printf("Character: %c\nstring: %s\nDouble percent: %%\n:", c, str);
 
 	for (i = 0; option[i] != '\0'; i++)
 	{
@@ -36,7 +33,7 @@ int parser(const char *option, print_f f[], va_list arg)
 				{
 					_putchar(option[i]);
 					_putchar(option[i + 1]);
-					a = a + 2;
+					a += 2;
 				} else
 					return (-1);
 			}
