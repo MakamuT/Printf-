@@ -15,9 +15,7 @@ int print_int(va_list arg)
 		len += _putchar(45);
 		num = i * -1;
 	} else
-	{
 		num = i;
-	}
 	if (num == 0)
 	{
 		len += _putchar(45);
