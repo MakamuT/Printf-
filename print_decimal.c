@@ -12,18 +12,13 @@ int print_decimal(va_list arg)
 	i = va_arg(arg, int);
 	if (i < 0)
 	{
-		if (i == INT_MIN)
-		{
-			len += _putchar(48 + 8);
-			num = INT_MAX;
-		} else
-		{
-			len += _putchar(45);
-			num = -1;
-		}
+		len += _putchar(45);
+		num = i * -1;
 	}
 	else
+	{
 		num = i;
+	}
 	if (num == 0)
 	{
 		len += _putchar(48);
