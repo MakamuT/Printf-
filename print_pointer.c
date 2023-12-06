@@ -57,5 +57,5 @@ int print_pointer(va_list arg)
 	_putchar(48);
 	_putchar('x');
 	byte = print_address(count);
-	return (byte + 2);
+	return (byte++);
 }
