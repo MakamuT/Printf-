@@ -24,7 +24,7 @@ int print_address(unsigned long int arg)
 		temp /= 16;
 	}
 
-	for (i = count; i >= 0; i--)
+	for (i = count - 1; i >= 0; i--)
 	{
 		if (hex[i] > 9)
 			hex[i] += 39;
