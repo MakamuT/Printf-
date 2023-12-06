@@ -22,13 +22,13 @@ int print_int(va_list arg)
 		len += _putchar(45);
 		num = i * -1;
 	}
-	if (i > 0)
-		num = i;
-	if (num == 0)
+	if (i == 0)
 	{
 		len += _putchar(48);
 		return (1);
 	}
+	if (i > 0)
+		num = i;
 	for (; num / div > 9;)
 		div *= 10;
 	for (; div != 0;)
