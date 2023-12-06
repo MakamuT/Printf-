@@ -17,6 +17,8 @@ int print_address(unsigned long int arg)
 	}
 	count++;
 	hex = malloc(count * sizeof(long int) + 1);
+	if (hex == NULL)
+		return (-1);
 
 	for (i = 0; i < count; i++)
 	{
@@ -30,7 +32,8 @@ int print_address(unsigned long int arg)
 			hex[i] += 39;
 		_putchar(hex[i] + 48);
 	}
-	free(hex);
+	if (hex != NULL)
+		free(hex);
 	return (count);
 }
 
