@@ -10,18 +10,27 @@ int print_int(va_list arg)
 	int num;
 
 	i = va_arg(arg, int);
-	if (i < 0)
+	if (i == INT_MIN)
 	{
 		len += _putchar(45);
-		num = i * -1;
-	}
-	if (i == 0)
+		num = i % 10 * -1;
+		i /= 10;
+		len++;
+	} else
 	{
-		len += _putchar(48);
-		return (1);
+		if (i < 0)
+		{
+			len += _putchar(45);
+			num = i * -1;
+		}
+		else if (i > 0)
+			num = i;
+		else
+		{
+			len += _putchar(48);
+			return (1);
+		}
 	}
-	if (i > 0)
-		num = i;
 	for (; num / div > 9;)
 		div *= 10;
 	for (; div != 0;)
