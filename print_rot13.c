@@ -6,7 +6,7 @@
  */
 int print_rot13(va_list arg)
 {
-	int i = 0, j = 0, k = 0, count = 0;
+	int i = 0, j, count = 0, in = 0;
 	char *str = va_arg(arg, char*);
 	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
@@ -15,16 +15,16 @@ int print_rot13(va_list arg)
 		str = "(null)";
 	while (str[i])
 	{
-		for (j = i - 1; letters[j] != '\0'; j--)
+		for (j = 0; letters[j] != '\0'; j--)
 		{
 			if (str[i] == letters[j])
 			{
 				_putchar(rot13[j]);
 				count++;
-				k = 1;
+				in = 1;
 			}
 		}
-		if (k == 0)
+		if (!in)
 		{
 			_putchar(str[i]);
 			count++;
