@@ -56,13 +56,5 @@ int print_binary(va_list arg);
 int print_rot13(va_list arg);
 
 /* Flags */
-int fdec_plus(va_list arg);
-int fdec_space(va_list arg);
-int fint_plus(va_list arg);
-int fint_space(va_list arg);
-int foct_hash(va_list arg);
-int fhex_hash(va_list arg);
-int fHEX_hash(va_list arg);
-int f_space(void);
 
 #endif
